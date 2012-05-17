@@ -1,0 +1,34 @@
+# Messages pour validation
+validation.required = %s est obligatoire.
+
+#Pour un meilleur affichage des champs à l'écran:
+login = Login
+password = Mot de passe
+mail = Adresse mail
+typeUtilisateur = Type d'utilisateur
+
+# Titre du menu de gauche, le menu1
+fr.menu1.titre.livres = Livres
+fr.menu1.titre.auteurs = Auteurs
+fr.menu1.titre.emprunts = Emprunts
+
+# Actions disponibles pour les menu
+fr.menu1.action.ajouter = Ajouter
+fr.menu1.action.rechercher = Rechercher
+
+# Actions disponibles pour les boutons
+bouton.modifier = Modifier
+
+# Definition des champs de l'auteur
+auteur.nom = Nom
+auteur.prenom = Prénom
+
+# Liste d'auteur
+afficherListeAuteurs.table.title.nom    = Nom de l'auteur
+afficherListeAuteurs.table.title.prenom = Prénom de l'auteur
+
+# Fiche de l'auteur
+ficheAuteur.title = Fiche de l'auteur
+
+# Modifier/ajouter un auteur
+ajouterAuteur.title = Ajouter/Modifier un auteur

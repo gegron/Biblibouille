@@ -9,6 +9,8 @@ db
 eclipse
 log
 logs
+# test, voir si besoin de le mettre ou non
+modules
 precompiled
 tmp
 test-result

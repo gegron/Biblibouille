@@ -1,0 +1,86 @@
+body {
+    width: 1024px;
+    margin-top: 20px;
+    margin-bottom:20px;
+    background-image:url("../images/bg.png");
+    background-repeat: repeat-xy;
+}
+
+header {
+    border-radius: 10px;
+    height:200px;
+    margin-bottom:20px;
+    background-image: url("../images/banniere2.jpg");
+}
+
+#menu1 {
+    float: left;
+    width:150px;    
+}
+
+.elementMenu1 {
+    /*background-color: #626262;*/
+    background-image: linear-gradient(bottom, rgb(240,228,226) 0%, rgb(255,0,145) 53%);
+    background-image: -o-linear-gradient(bottom, rgb(240,228,226) 0%, rgb(255,0,145) 53%);
+    background-image: -moz-linear-gradient(bottom, rgb(240,228,226) 0%, rgb(255,0,145) 53%);
+    background-image: -webkit-linear-gradient(bottom, rgb(240,228,226) 0%, rgb(255,0,145) 53%);
+    background-image: -ms-linear-gradient(bottom, rgb(240,228,226) 0%, rgb(255,0,145) 53%);
+
+    border-radius: 10px;
+    border: 2px solid black;
+    padding-left: 5px;
+    
+    margin-bottom: 20px;
+}
+
+.content {
+    height:100%;
+    margin-left: 170px;
+    background:white;
+}
+
+footer {
+	clear: left;
+    margin-bottom: 20px;    
+    background:grey;
+}
+
+/* Mise en forme pour l'affichag des erreurs */
+.error {
+	color:red;
+}
+
+.success {
+	color:blue;
+	font-style: italic;
+}
+
+/* Mise en forme des liens */
+button a {
+	text-decoration: none;
+	color: black;
+}
+
+/* CSS sur le tableau de classe tableauBasique */
+table.tableauBasique {
+	border-collapse: collapse;
+}
+
+table.tableauBasique thead th {
+	border: 1px solid black;
+	background-color: #ffd56d;
+}
+
+table.tableauBasique tbody tr:nth-child(even) {
+	background-color: #fbffa1;
+}
+
+table.tableauBasique tbody tr:nth-child(odd) {
+    background-color: #fff1eb;
+}
+
+table.tableauBasique td {
+    border: 1px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+}
