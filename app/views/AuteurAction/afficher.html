@@ -1,0 +1,56 @@
+#{extends 'main.html' /}
+#{set title: 'Auteur' /}
+
+#{if auteur}
+    <h1>&{'ficheAuteur.title'}</h1>
+    <table>
+        <tr>
+            <td>&{'auteur.nom'}</td>
+            #{if editable}
+                <td><input type="text" value="${auteur.nom}" /></td>
+            #{/if}
+            #{else}
+                <td>${auteur.nom}</td>
+            #{/else}
+        </tr>
+        <tr>
+            <td>&{'auteur.prenom'}</td>
+            #{if editable}
+                <td><input type="text" value="${auteur.prenom}" readonly="false" /></td>
+            #{/if}
+            #{else}
+                <td>${auteur.prenom}</td>
+            #{/else}
+        </tr>
+    </table>
+    
+    <!-- Bouton modifier -->
+    <button type="button" value="Modifier" title="Modifier">
+        <a href="@{AuteurAction.modifier(auteur.id)}">Modifier</a>
+    </button>
+
+    
+#{/if}
+#{elseif auteurs}
+    <table class="tableauBasique">
+	    <thead>
+	        <tr>
+	            <th>&{'afficherListeAuteurs.table.title.nom'}</th>
+	            <th>&{'afficherListeAuteurs.table.title.prenom'}</th>
+	            <th>Nombre de livres &eacute;crits</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        #{list auteurs, as:'itemAuteur'}
+	           <tr>
+	            <td><a href="@{AuteurAction.afficher(itemAuteur.id)}">${itemAuteur.nom}</a></td>
+	            <td>${itemAuteur.prenom}</td>
+	            <td>${itemAuteur.livreEcrits.size()}</td>
+	           </tr>
+	        #{/list}
+	    </tbody>
+    </table>
+#{/elseif}
+#{else}
+    Erreur...
+#{/else}

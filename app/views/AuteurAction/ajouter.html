@@ -1,0 +1,49 @@
+#{extends 'main.html' /}
+#{set title: 'Auteur' /}
+
+<h1>&{'ajouterAuteur.title'}</h1>
+
+#{form @AuteurAction.enregistrer()}
+
+#{if auteur}
+    <!-- Champ caché pour la sauvegarde de l'auteur si existant -->
+    <input type="hidden" name="auteur.id" value="${auteur.id}" />
+#{/if}
+<table>
+  #{field 'auteur.nom'}
+  <tr>
+    <td><label for="${field.id}">Nom de l'auteur:</label></td>
+    <td><input type="text" name="${field.name}" id="${field.id}" value="${field.value}" class="${field.errorClass}" />
+    <td><span class="error">${field.error}</span></td>
+  </tr>
+  #{/field}
+  #{field 'auteur.prenom'}
+  <tr>
+    <td><label for="${field.id}">Prénom de l'auteur:</label></td>
+    <td><input type="text" name="${field.name}" id="${field.id}" value="${field.value}" class="${field.errorClass}" />
+    <td><span class="error">${field.error}</span></td>
+    </td>
+  </tr>
+  #{/field}
+</table>
+
+<input type="submit" value="Enregistrer" />
+    
+#{/form}
+
+<!-- Pour avoir un focus sur les champs en cours, mais chiant...
+<script type="text/javascript" charset="utf-8"">
+    $(function() {
+        // expose the form
+        $('form').click(function() {
+            $('form').expose({api: true}).load();
+        });
+
+        // If there is an error, focus to form
+        if($('form .error').size()) {
+            $('form').expose({api: true, loadspeed: 0}).load();
+            $('form input').get(0).focus();
+        }
+    });
+</script>
+-->

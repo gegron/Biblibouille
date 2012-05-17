@@ -1,0 +1,19 @@
+#{extends 'main.html' /}
+#{set title: 'Rechercher un auteur' /}
+
+<h1>Rechercher un auteur</h1>
+
+#{form @AuteurAction.rechercher()}
+    <table>
+        <tr>
+	        <td>Nom de l'auteur:</td>
+	        <td><input type="text" name="nom" /></td>
+        </tr>
+        <tr>
+            <td>Pr&eacute;nom de l'auteur:</td>
+            <td><input type="text" name="prenom" /></td>
+        </tr>
+    </table>
+    
+    <input type="submit" value="&{'fr.menu1.action.rechercher'}" />
+#{/form}

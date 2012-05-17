@@ -1,0 +1,49 @@
+#{extends 'main.html' /}
+#{set title: 'Ajouter un livre' /}
+
+
+*{
+    Cet écran permet d'ajouter des livres mais également d'en mofier un existant
+}*
+
+<h1>Ajouter/Modifier un livre</h1>
+
+#{form @LivreAction.enregistrer() }
+
+    <table>
+        #{field 'livre.id'}
+        <input type="hidden" name="${field.name}" value="${field.value}" />
+        #{/field}
+        
+        #{field 'livre.titre'}
+        <tr>
+            <td><label for="${field.id}">Titre du livre:</label></td>
+            <td><input type="text" id="${field.id}" name="${field.name}" value="${field.value}" class="${field.errorClass}" /></td>
+            <td><span class="error">${field.error}</span></td>
+        </tr>
+        #{/field}
+        #{field 'livre.collection'}
+        <tr>
+            <td><label for="${field.id}">Collection du livre:</label></td>
+            <td><input type="text" id="${field.id}" name="${field.name}" value="${field.value}" class="${field.errorClass}" /></td>
+            <td><span class="error">${field.error}</span></td>
+        </tr>
+        #{/field}
+        #{field 'livre.etage'}
+        <tr>
+            <td><label for="${field.id}">Etage:</label></td>
+            <td><input type="text" id="${field.id}" name="${field.name}" value="${field.value}" class="${field.errorClass}" /></td>
+            <td><span class="error">${field.error}</span></td>
+        </tr>
+        #{/field}
+        #{field 'livre.auteur'}
+        <tr>
+            <td><label for="${field.id}">Auteur du livre:</label></td>
+            <td> #{select 'livre.auteur.id', items:auteurs, valueProperty:'id', labelProperty:'libelle', value:livre?.auteur?.id /} </td>
+            <td><span class="error">${field.error}</span></td>
+        </tr>
+        #{/field}
+    </table>
+    
+    <input type="submit" value="Enregistrer" />
+#{/form}

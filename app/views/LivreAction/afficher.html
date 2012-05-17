@@ -1,0 +1,83 @@
+#{extends 'main.html' /}
+#{set title: 'Afficher un livre' /}
+
+#{if livre}
+    <h1>Fiche du livre: <i>${livre?.titre}</i></h1>
+
+    <table>
+        <input type="hidden" name="id" value="${livre?.id}" />
+        <tr>
+            <td><label>Titre du livre:</label></td>
+            <td>${livre?.titre}</td>
+        </tr>
+        <tr>
+            <td><label>Collection du livre:</label></td>
+            <td>${livre?.collection}</td>
+        </tr>
+        <tr>
+            <td><label>Etage:</label></td>
+            <td>${livre?.etage}</td>
+        </tr>
+        <tr>
+            <td><label>Auteur du livre:</label></td>
+            <td>${livre?.auteur?.libelle}</td>
+        </tr>
+    </table>
+    
+    <button><a href="@{LivreAction.modifier(livre.id)}">&{'bouton.modifier'}</a></button>
+    
+#{/if}
+#{elseif livres}
+    <table class="tableauBasique">
+        <thead>
+	        <tr>
+	            <th>Titre</th>
+	            <th>Collection</th>
+	            <th>Auteur</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+		    #{list livres, as:'item'}
+	        <tr>
+	            <td><a href="@{LivreAction.afficher(item.id)}">${item.titre}</a></td>
+	            <td>${item.collection}</td>
+	            <td><a href="@{AuteurAction.afficher(item.auteur.id)}">${item.auteur.libelle}</a></td>
+	        </tr>
+		    #{/list}
+        </tbody>
+    </table>
+    
+    <!-- Gestion de la pagination -->
+    %{
+        pagePrec = numPage - 1;
+        pageSuiv = numPage + 1;
+        int nbPageTotal = nbTotalResultat / nbParPage;
+        if(nbTotalResultat % nbParPage != 0) {
+            nbPageTotal++;
+        }
+    }%
+    
+    
+    <!-- Si pas première page, mettre un lien précédent -->
+    #{if numPage > 1 }
+        <a href="@{LivreAction.pagination(pagePrec, query, nbTotalResultat)}">prec</a>
+    #{/if}
+    
+    #{list items:1..nbPageTotal, as:'i'}
+        <a href="@{LivreAction.pagination(i, query, nbTotalResultat)}">${i}</a>
+    #{/list}
+    
+    <!-- Si pas derniere page, mettre un lien precedent -->
+    #{if numPage < nbPageTotal }
+        <a href="@{LivreAction.pagination(pageSuiv, query, nbTotalResultat)}">suiv</a>
+    #{/if}
+    
+    
+    <!-- Compter le nombre de page, et mettre des liens vers chacun d'entre eux -->
+    
+    
+    
+#{/elseif}
+#{else}
+    <p class="error">Il n'y a pas de livre &agrave; afficher.</p>
+#{/else}
