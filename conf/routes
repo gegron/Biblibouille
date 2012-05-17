@@ -1,0 +1,42 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Import Secure routes
+*       /                                       module:secure
+
+# Import CRUD routes
+*       /admin                                  module:crud
+
+# Home page
+GET     /                                       Application.index
+
+GET     /auteur/ajouter                         AuteurAction.ajouter
+
+GET     /auteur/rechercher                      AuteurAction.rechercher
+
+GET     /auteur/enregistrer                     AuteurAction.enregistrer
+
+GET     /auteur/modifier/{id}                   AuteurAction.modifier
+
+GET     /auteur/{id}                            AuteurAction.afficher
+
+# Les actions concernant les livres
+
+GET     /livre/afficher/{id}                    LivreAction.afficher
+
+GET     /livre/ajouter                          LivreAction.ajouter
+
+GET     /livre/modifier/{id}                    LivreAction.modifier
+
+GET     /livre/enregistrer                      LivreAction.enregistrer
+
+GET     /livre/rechercher                       LivreAction.rechercher
+
+GET     /livre/pagination                       LivreAction.pagination
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}

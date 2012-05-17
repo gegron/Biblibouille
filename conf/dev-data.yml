@@ -1,0 +1,106 @@
+# dev-data.yml
+
+Utilisateur(admin):
+    login: admin
+    password: admin
+    email: legunda.gg@gmail.com
+    typeUtilisateur: ADMIN
+    
+Utilisateur(bouille):
+    login: bouille
+    password: bouille
+    email: bouille@gmail.com
+    typeUtilisateur: PROPRIETAIRE
+
+Auteur(marcel):
+    nom: PROUST
+    prenom: Marcel
+
+Auteur(honore):
+    nom: BALZAC
+    prenom: Honore
+
+Auteur(simone):
+    nom: BEAUVOIR (DE)
+    prenom: Simone
+
+Auteur(daudet):
+    nom: DAUDET
+    prenom: Alphonse
+    
+Livre(livre1):
+    titre: Memoire d'une jeune fille rangee
+    collection: Gallimard
+    etage: 8
+    auteur: [simone]
+    proprietaire: [bouille]
+    
+Livre(livre2):
+    titre: La force de l'Age
+    collection: Gallimard
+    etage: 7
+    auteur: [simone]
+    proprietaire: [bouille]
+    
+Livre(livre3):
+    titre: La femme independante
+    collection: Gallimard
+    etage: 7
+    auteur: [simone]
+    proprietaire: [bouille]
+    
+Livre(livre4):
+    titre: Les lettres de mon Moulin
+    collection: Hachette
+    etage: 14
+    auteur: [daudet]
+    proprietaire: [bouille]
+    
+Livre(livre5):
+    titre: Les lettres de mon Moulin
+    collection: Edition Nelson
+    etage: 15
+    auteur: [daudet]
+    proprietaire: [bouille]
+    
+Livre(livre6):
+    titre: Les lettres de mon Moulin (Texte integral)
+    collection: Hachette
+    etage: 14
+    auteur: [daudet]
+    proprietaire: [bouille]
+    
+Livre(livre7):
+    titre: Tartarin de Taracson
+    collection: Livre de poche
+    etage: 14
+    auteur: [daudet]
+    proprietaire: [bouille]
+    
+Livre(livre8):
+    titre: Tartarin sur les Alpes
+    collection: Livre de poche
+    etage: 14
+    auteur: [daudet]
+    proprietaire: [bouille]
+    
+Livre(livre9):
+    titre: Numa Roumestan
+    collection: Edition Nelson
+    etage: 14
+    auteur: [daudet]
+    proprietaire: [bouille]
+
+Livre(livre10):
+    titre: Le petit chose
+    collection: Livre de poche
+    etage: 14
+    auteur: [daudet]
+    proprietaire: [bouille]
+
+Livre(livre11):
+    titre: Romans, Recits, Contes
+    collection: Livre de poche
+    etage: 14
+    auteur: [daudet]
+    proprietaire: [bouille]
