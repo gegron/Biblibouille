@@ -3,4 +3,5 @@
 require:
     - play -> crud
     - play -> secure
+    - play -> cloudbees 0.2.2
 #    - play -> module.spring
